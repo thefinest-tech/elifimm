@@ -1,0 +1,466 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap');
+
+:root {
+  --pink: #e85d8c;
+  --dark-pink: #a83e68;
+  --soft-pink: #fff0f5;
+  --text: #573748;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: clip;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%, #fff 0%, transparent 42%),
+    linear-gradient(160deg, #fff0f5, #ffe1eb 50%, #fff8fa);
+}
+
+button {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: min(680px, 100%);
+  margin: auto;
+  padding: 45px 28px 25px;
+  text-align: center;
+}
+
+.sunrise {
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #fff, #ffd7e4);
+  box-shadow: 0 0 55px #f5a2bf70;
+  font-size: 38px;
+  animation: sunFloat 4s ease-in-out infinite;
+}
+
+.eyebrow {
+  color: var(--pink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  line-height: 1.8;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+h1 {
+  margin: 18px 0;
+  font-size: clamp(38px, 8vw, 60px);
+  line-height: 1.2;
+}
+
+h1 span {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.intro {
+  max-width: 470px;
+  margin: 0 auto 30px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #806678;
+}
+
+.photo-frame {
+  width: min(300px, 88%);
+  margin: 0 auto 38px;
+  padding: 10px 10px 17px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 15px 45px #b45a7b20;
+  transform: rotate(-2deg);
+  transition: transform .3s;
+}
+
+.photo-frame:hover {
+  transform: rotate(0) scale(1.02);
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #ffe1eb;
+}
+
+.photo-caption {
+  padding-top: 13px;
+  font: italic 15px 'Playfair Display', serif;
+}
+
+.apology {
+  padding: clamp(23px, 5vw, 42px);
+  border: 1px solid #f4c3d4;
+  border-radius: 25px;
+  background: #ffffffb8;
+  box-shadow: 0 15px 60px #b45a7b10;
+  text-align: left;
+}
+
+.envelope {
+  margin-bottom: 14px;
+  font-size: 36px;
+  text-align: center;
+}
+
+.apology .eyebrow {
+  text-align: center;
+}
+
+.apology h2 {
+  margin: 17px 0 24px;
+  color: var(--dark-pink);
+  font-size: clamp(24px, 5vw, 32px);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.apology p:not(.eyebrow) {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.95;
+  overflow-wrap: anywhere;
+}
+
+.promise {
+  padding: 17px;
+  border-left: 3px solid var(--pink);
+  border-radius: 0 12px 12px 0;
+  background: #fff0f5;
+  color: var(--dark-pink);
+}
+
+.button {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 25px;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 50px;
+  background: linear-gradient(120deg, #e85d8c, #c74b7a);
+  color: white;
+  box-shadow: 0 8px 25px #e85d8c35;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px #e85d8c45;
+}
+
+.button:active {
+  transform: scale(.98);
+}
+
+.surprise {
+  margin-top: 28px;
+  padding: 25px 18px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fff0f5, #ffe0eb);
+  text-align: center;
+  animation: appear .45s ease;
+}
+
+.surprise h2 {
+  margin: 12px 0;
+}
+
+.surprise .big-heart {
+  font-size: 46px;
+  animation: heartbeat 1.2s infinite;
+}
+
+.signature {
+  color: var(--dark-pink);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+footer {
+  padding: 32px 10px 10px;
+  color: #916d81;
+  font-size: 13px;
+  line-height: 2;
+}
+
+footer div {
+  color: var(--pink);
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  color: #e85d8c;
+  opacity: .5;
+  animation: floatUp linear forwards;
+}
+
+@keyframes sunFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.13); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 28px 17px 20px;
+  }
+
+  .sunrise {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+  }
+
+  .intro {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .photo-frame {
+    width: min(270px, 85%);
+    margin-bottom: 30px;
+  }
+
+  .apology {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .apology p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .button {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =====================================
+   EK MOBİL UYUMLULUK
+   Mevcut kodları bozmadan eklendi.
+   ===================================== */
+
+@media (max-width: 480px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  h1 {
+    font-size: clamp(34px, 9vw, 42px);
+    line-height: 1.25;
+    overflow-wrap: break-word;
+  }
+
+  .intro {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 3px;
+    line-height: 1.8;
+  }
+
+  .photo-frame {
+    width: min(270px, 88%);
+    max-width: 100%;
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: auto;
+  }
+
+  .apology {
+    width: 100%;
+    min-width: 0;
+    padding: 23px 17px;
+    overflow-wrap: break-word;
+  }
+
+  .apology h2 {
+    font-size: clamp(23px, 6vw, 29px);
+    overflow-wrap: break-word;
+  }
+
+  .apology p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .promise {
+    padding: 14px;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 12px;
+    line-height: 1.6;
+    white-space: normal;
+    overflow-wrap: break-word;
+    touch-action: manipulation;
+  }
+
+  .surprise {
+    padding: 22px 14px;
+    overflow-wrap: break-word;
+  }
+
+  .signature {
+    overflow-wrap: anywhere;
+  }
+
+  footer {
+    padding: 28px 5px 12px;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Çok küçük ekranlar */
+@media (max-width: 360px) {
+  .page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .apology {
+    padding: 20px 14px;
+  }
+
+  .eyebrow {
+    letter-spacing: 1.4px;
+  }
+
+  h1 {
+    font-size: 33px;
+  }
+
+  .button {
+    font-size: 13px;
+  }
+}
+
+/* Yatay telefon görünümü */
+@media (max-height: 500px) and (orientation: landscape) {
+  .page {
+    padding-top: 20px;
+  }
+
+  .sunrise {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 16px;
+    font-size: 28px;
+  }
+}
+
+/* Romantik kalp yağmuru */
+.heart {
+  position: absolute;
+  bottom: -40px;
+  color: #e85d8c;
+  opacity: 0.65;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  text-shadow: 0 0 12px #ff9fbd80;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: translateY(-115vh) rotate(35deg) scale(1.2);
+    opacity: 0;
+  }
+}
